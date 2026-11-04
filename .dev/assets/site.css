@@ -1,0 +1,286 @@
+/* Shared styles for the AS208694 website. */
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: sans-serif; 
+    background-color: #f9fafb; 
+    color: #333; 
+    margin: 0; 
+    padding: 20px; 
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container { 
+    width: min(100%, 900px);
+    max-width: 900px; 
+    margin: auto; 
+    background: #ffffff; 
+    padding: 20px 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    color: #333;
+    margin-bottom: 0.5em;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+p {
+    color: #555;
+    margin-bottom: 1em;
+}
+
+a {
+    color: #005fc4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info { 
+    margin-top: 20px; 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    font-size: 0.9em; 
+    max-width: 400px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center; 
+    border: 2px solid #ddd; 
+    background-color: inherit; 
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.connected {
+    color: #187a31;
+    border-color: #187a31;
+}
+
+.not-connected {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.details { 
+    margin-top: 15px; 
+    padding: 15px 20px; 
+    border-radius: 8px; 
+    background-color: #f4f4f4; 
+    font-size: 0.85em; 
+    border: 1px solid #ddd; 
+    max-width: 400px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 24px 0;
+}
+
+.peering-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.95em;
+}
+
+.peering-table th,
+.peering-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.peering-table th {
+    background-color: #eeeeee;
+    color: #333;
+    font-weight: 600;
+}
+
+.peering-table td {
+    color: #333;
+}
+
+.peering-table tr:last-child td {
+    border-bottom: none;
+}
+
+.muted {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.route-graph {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.route-graph img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.status-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #28a745;
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0.7);
+    animation: pulse 1.6s infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 0.45rem rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+.details.special-asn {
+    border-color: rgba(212, 175, 55, 0.95);
+    box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.35),
+        0 0 14px rgba(212, 175, 55, 0.35),
+        0 0 28px rgba(212, 175, 55, 0.18);
+}
+
+.asn-highlight {
+    color: #765f00;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    .peering-table {
+        font-size: 0.85em;
+    }
+
+    .peering-table th,
+    .peering-table td {
+        padding: 10px 12px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+
+    .container {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+    }
+
+    h1 {
+        color: #ffffff;
+    }
+
+    p {
+        color: #cccccc;
+    }
+
+    a {
+        color: #66aaff;
+    }
+
+    .connected {
+        color: #36c48d;
+        border-color: #36c48d;
+    }
+
+    .not-connected {
+        color: #ff7676;
+        border-color: #ff7676;
+    }
+
+    .details {
+        background-color: #2a2a2a;
+        border-color: #444;
+        color: #f0f0f0;
+    }
+
+    .details.special-asn {
+        border-color: transparent;
+    }
+
+    .peering-table {
+        background-color: #2a2a2a;
+        border-color: #444;
+    }
+
+    .peering-table th {
+        background-color: #242424;
+        color: #f0f0f0;
+    }
+
+    .peering-table td {
+        color: #f0f0f0;
+        border-bottom-color: #444;
+    }
+
+    .muted {
+        color: #cccccc;
+    }
+
+    .asn-highlight {
+        color: #e6c34d;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+

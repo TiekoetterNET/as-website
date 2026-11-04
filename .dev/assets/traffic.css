@@ -1,0 +1,210 @@
+/* Traffic dashboard-specific styles. */
+.dashboard-nav {
+            text-align: center;
+            margin-bottom: 1.5rem;
+}
+
+        .dashboard-nav a {
+            margin: 0 0.35rem;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin: 24px 0;
+        }
+
+        .kpi-card {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 14px 16px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+.kpi-label {
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 0;
+            margin-bottom: 6px;
+}
+
+.kpi-total {
+            margin: 0;
+            color: #333;
+            font-size: 1.35em;
+            font-weight: 700;
+}
+
+.kpi-card .subtle {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 0;
+            color: #666;
+            font-size: 0.8em;
+            font-weight: 400;
+        }
+
+        .dashboard-note {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f4;
+            color: #555;
+            font-size: 0.9em;
+            margin: 18px 0;
+        }
+
+        .source-ok {
+            color: #187a31;
+            font-weight: 600;
+        }
+
+        .source-warn {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        .chart-card {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 24px 0;
+            overflow-x: auto;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .traffic-chart {
+            width: 100%;
+            min-width: 640px;
+            height: 280px;
+            display: block;
+        }
+
+        .chart-axis,
+        .chart-label {
+            fill: #666;
+            font-size: 11px;
+        }
+
+        .chart-grid {
+            stroke: #ddd;
+            stroke-width: 1;
+        }
+
+        .chart-bar {
+            fill: #007bff;
+        }
+
+        .chart-bar-current {
+            fill: #66aaff;
+        }
+
+        .dashboard-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 24px 0;
+        }
+
+        .dashboard-table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.95em;
+        }
+
+        .dashboard-table th,
+        .dashboard-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        .dashboard-table th {
+            background-color: #eeeeee;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .dashboard-table td {
+            color: #333;
+        }
+
+        .dashboard-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .loading {
+            opacity: 0.75;
+        }
+
+        @media (max-width: 760px) {
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .traffic-chart {
+                min-width: 560px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .kpi-card,
+            .dashboard-note,
+            .chart-card,
+            .dashboard-table {
+                background-color: #2a2a2a;
+                border-color: #444;
+            }
+
+            .kpi-label,
+            .kpi-card .subtle,
+            .muted,
+            .chart-axis,
+            .chart-label {
+                color: #cccccc;
+                fill: #cccccc;
+            }
+
+            .kpi-total,
+            .dashboard-table td {
+                color: #f0f0f0;
+            }
+
+            .dashboard-table th {
+                background-color: #242424;
+                color: #f0f0f0;
+            }
+
+            .dashboard-table td,
+            .dashboard-table th {
+                border-bottom-color: #444;
+            }
+
+            .chart-grid {
+                stroke: #444;
+            }
+
+            .chart-bar {
+                fill: #66aaff;
+            }
+
+            .chart-bar-current {
+                fill: #9cc8ff;
+            }
+
+            .dashboard-note {
+                color: #cccccc;
+            }
+
+            .source-warn {
+                color: #ff7676;
+            }
+        }

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Dashboard – AS208694 – LEON-AARON-TIEKOETTER</title>
+    <meta name="description" content="Traffic statistics for AS208694 (LEON-AARON-TIEKOETTER)">
+    <link rel="canonical" href="https://www.as.tiekoetter.net/traffic/">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="https://tiekoetternet-cdn.tiekoetter.cloud/assets/as/site.css?v=1">
+    <link rel="stylesheet" href="https://tiekoetternet-cdn.tiekoetter.cloud/assets/as/traffic.css?v=1">
+    <meta property="og:title" content="AS208694 Traffic Dashboard">
+    <meta property="og:description" content="Traffic statistics for AS208694 (LEON-AARON-TIEKOETTER)">
+    <meta property="og:url" content="https://www.as.tiekoetter.net/traffic/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <script src="https://tiekoetternet-cdn.tiekoetter.cloud/assets/as/traffic.js?v=1" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+          <a href="/">← Back to AS208694 homepage</a>
+        </div>
+
+        <h1>Traffic Dashboard – AS208694</h1>
+
+        <p>
+            Public traffic statistics for Autonomous System <code>AS208694</code>, operated by Tiekoetter.NET.
+            Values are collected from configured router interface counters and aggregated by luna.as.tiekoetter.net.
+
+        </p>
+        <p class="muted">
+            Traffic accounting periods are based on Europe/Berlin time. Fetch and source-update timestamps are shown in UTC using ISO 8601 format.
+        </p>
+        <p class="muted">
+            Data is collected approximately every 5 minutes.
+        </p>
+
+        <div class="dashboard-nav">
+            <a href="/communities/">Communities</a> ·
+            <a href="/route-propagation/">Route Propagation</a> ·
+            <a href="https://www.lg.as.tiekoetter.net/">Looking Glass</a>
+        </div>
+
+        <div id="load-status" class="info loading" role="status" aria-live="polite">Loading traffic statistics...</div>
+
+        <div class="kpi-grid">
+            <section class="kpi-card">
+                <p id="primary-day-label" class="kpi-label">Latest completed day</p>
+                <p id="primary-day-total" class="kpi-total">—</p>
+                <p id="primary-day-sub" class="subtle">Waiting for data...</p>
+            </section>
+
+            <section class="kpi-card">
+                <p class="kpi-label">Today so far</p>
+                <p id="today-total" class="kpi-total">—</p>
+                <p id="today-sub" class="subtle">Waiting for data...</p>
+            </section>
+
+            <section class="kpi-card">
+                <p class="kpi-label">Last 7 completed days</p>
+                <p id="week-total" class="kpi-total">—</p>
+                <p id="week-sub" class="subtle">Waiting for data...</p>
+            </section>
+        </div>
+
+        <div id="measurement-note" class="dashboard-note">
+            Loading measurement note...
+        </div>
+
+        <h2>Hourly Aggregate Traffic</h2>
+        <p class="muted">
+            Last 48 hourly aggregate entries from interfaces included in the public AS total.
+        </p>
+
+        <div class="chart-card">
+            <svg id="hourly-chart" class="traffic-chart" role="img" aria-label="Hourly aggregate traffic chart"></svg>
+        </div>
+
+        <h2>Daily Aggregate Traffic</h2>
+        <p class="muted">
+            Last 30 daily aggregate entries from interfaces included in the public AS total.
+        </p>
+
+        <div class="chart-card">
+            <svg id="daily-chart" class="traffic-chart" role="img" aria-label="Daily aggregate traffic chart"></svg>
+        </div>
+
+        <h2>Configured Sources</h2>
+        <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Router</th>
+                        <th>Status</th>
+                        <th>Last Fetch</th>
+                        <th>Source Updated</th>
+                    </tr>
+                </thead>
+                <tbody id="sources-table">
+                    <tr><td colspan="4">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Latest Per-Interface Daily Totals</h2>
+        <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Router</th>
+                        <th>Interface</th>
+                        <th>Category</th>
+                        <th>RX</th>
+                        <th>TX</th>
+                        <th>Total</th>
+                        <th>Aggregate</th>
+                    </tr>
+                </thead>
+                <tbody id="interfaces-table">
+                    <tr><td colspan="8">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Monthly Aggregate</h2>
+        <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>RX</th>
+                        <th>TX</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="monthly-table">
+                    <tr><td colspan="4">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Raw Data</h2>
+        <ul>
+            <li><a href="https://data.luna.as.tiekoetter.net/assets/traffic/summary.json">Summary JSON</a></li>
+            <li><a href="https://data.luna.as.tiekoetter.net/assets/traffic/hourly.json">Hourly JSON</a></li>
+            <li><a href="https://data.luna.as.tiekoetter.net/assets/traffic/daily.json">Daily JSON</a></li>
+            <li><a href="https://data.luna.as.tiekoetter.net/assets/traffic/monthly.json">Monthly JSON</a></li>
+            <li><a href="https://data.luna.as.tiekoetter.net/assets/traffic/routers.json">Router/source configuration JSON</a></li>
+        </ul>
+
+        <noscript>
+            <div class="dashboard-note">
+                This dashboard requires JavaScript because the traffic data is loaded from generated JSON files.
+            </div>
+        </noscript>
+
+        <footer>
+            <p>© <span id="cyear">2026 </span>Tiekoetter.NET / Léon Tiekötter<br><a href="https://www.tiekoetter.net" target="_blank" rel="noopener">www.tiekoetter.net</a> • <a href="https://www.tiekoetter.com/impressum" target="_blank" rel="noopener">Impressum</a></p>
+        </footer>
+    </div>
+
+    <span aria-hidden="true" style="display:none;">
+      Contact: tinbox@tiekoetter.com
+    </span>
+</body>
+</html>

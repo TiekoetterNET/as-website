@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGP Route Propagation – AS208694 – LEON-AARON-TIEKOETTER</title>
+  <meta name="description" content="BGP route propagation graphs for AS208694 (Tiekoetter.NET)." />
+  <link rel="canonical" href="https://www.as.tiekoetter.net/route-propagation/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="https://tiekoetternet-cdn.tiekoetter.cloud/assets/as/site.css?v=1" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="/">← Back to AS208694 homepage</a>
+    </div>
+
+    <h1>BGP Route Propagation – AS208694</h1>
+
+    <p>This page documents the BGP Route Propagation of <code>AS208694</code>.</p>
+
+    <h2>IPv6</h2>
+    <h3>Aggregated</h3>
+    <p>Source: <a href="https://bgp.he.net/AS208694#_graph6" target="_blank" rel="noopener noreferrer">bgp.he.net</a></p>
+    <div class="route-graph">
+      <img src="https://bgp.he.net/graphs/as208694-ipv6.svg" alt="IPv6 route propagation graph for AS208694 from bgp.he.net" loading="lazy" decoding="async">
+    </div>
+    <h3>Anycast prefix 2a14:7c0:4be0::/48 (realtime)</h3>
+    <p>Source: <a href="https://bgp.he.net/net/2a14:7c0:4be0::/48#_graph" target="_blank" rel="noopener noreferrer">bgp.he.net</a></p>
+    <div class="route-graph">
+      <img class="he-realtime" src="https://bgp.he.net/graphs/net_2a14:7c0:4be0::_48_208694.svg?v=1" alt="IPv6 route propagation graph for AS208694 anycast prefix 2a14:7c0:4be0::/48 from bgp.he.net" loading="lazy" decoding="async">
+    </div>
+    <h3>Anycast prefix 2a09:54c5:1000::/48 (realtime)</h3>
+    <p>Source: <a href="https://bgp.he.net/net/2a09:54c5:1000::/48#_graph" target="_blank" rel="noopener noreferrer">bgp.he.net</a></p>
+    <div class="route-graph">
+      <img class="he-realtime" src="https://bgp.he.net/graphs/net_2a09:54c5:1000::_48_208694.svg?v=1" alt="IPv6 route propagation graph for AS208694 anycast prefix 2a09:54c5:1000::/48 from bgp.he.net" loading="lazy" decoding="async">
+    </div>
+
+
+    <footer>
+      <p>© <span id="cyear">2026 </span>Tiekoetter.NET / Léon Tiekötter<br><a href="https://www.tiekoetter.net" target="_blank" rel="noopener">www.tiekoetter.net</a> • <a href="https://www.tiekoetter.com/impressum" target="_blank" rel="noopener">Impressum</a></p>
+    </footer>
+    </div>
+    <span aria-hidden="true" style="display:none;">
+      Contact: tinbox@tiekoetter.com
+    </span>
+    <script src="https://tiekoetternet-cdn.tiekoetter.cloud/assets/as/common.js?v=1"></script>
+<script>
+document.querySelectorAll(".he-realtime").forEach((img) => {
+    const url = new URL(img.src);
+    url.searchParams.set("v", Math.floor(Date.now() / 300000));
+    img.src = url.toString();
+});
+</script>
+</body>
+</html>

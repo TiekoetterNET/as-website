@@ -1,0 +1,22 @@
+# Geofeed policy:
+# Parent aggregate entries provide a deterministic fallback geolocation for otherwise unspecified address space under ORG-TIEK1-RIPE.
+# More-specific entries are authoritative for the corresponding operational prefixes.
+# Anycast prefixes are intentionally marked as AQ to indicate non-territorial, globally distributed service use rather than a single physical locality.
+2a14:7c0:4be0::/43,DE,DE-NW,Bielefeld,
+2a09:54c5:1000::/40,DE,DE-NW,Bielefeld,
+
+2a0c:9a40:8820::/48,DE,DE-HE,Frankfurt am Main,
+2a14:7c0:4be0::/48,AQ,,,
+2a14:7c0:4be1::/48,DE,DE-HE,Frankfurt am Main,
+2a14:7c0:4be4::/46,US,US-MO,Kansas City,
+2a14:7c0:4bf4::/46,DE,DE-HE,Frankfurt am Main,
+2a14:7c0:4bf8::/46,DE,DE-NW,Bielefeld,
+2a14:7c0:4bfc::/46,DE,DE-BY,Nuremberg,
+2a09:54c5:1000::/48,AQ,,,
+2a09:54c5:1001::/48,DE,DE-HE,Frankfurt am Main,
+2a09:54c5:1002::/48,US,US-MO,Kansas City,
+2a09:54c5:1010::/44,DE,DE-BY,Nuremberg,
+2a09:54c5:1020::/44,DE,DE-HE,Frankfurt am Main,
+2a09:54c5:1030::/44,US,US-MO,Kansas City,
+2a09:54c5:10a0::/44,AQ,,Cape Denison,
+2a09:54c5:10b0::/48,DE,DE-NW,Bielefeld,
