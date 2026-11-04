@@ -1,0 +1,184 @@
+/* Page-specific styles for the AS208694 BGP network overview. */
+.container {
+    width: min(100%, 1200px);
+    max-width: 1200px;
+}
+
+.nav {
+    margin-bottom: 1rem;
+}
+
+.dashboard-nav {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.dashboard-nav a {
+    margin: 0 0.35rem;
+}
+
+.network-overview {
+    margin: 28px 0 48px;
+}
+
+.network-overview h2,
+.network-intro,
+.network-updated {
+    text-align: center;
+}
+
+.network-map-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: fit-content;
+    margin: 16px auto 0;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.network-map-style select {
+    padding: 0.35rem 1.8rem 0.35rem 0.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+    font: inherit;
+}
+
+.network-map {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 20px auto 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f6f8fa;
+}
+
+.peer-count {
+    margin: 24px 0 8px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.table-wrap.peer-table-wrap {
+    max-width: none;
+    margin: 0 auto 24px;
+    border-radius: 8px;
+    background: #f4f4f4;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.peering-table.current-peers-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 840px;
+    border: 0;
+    border-radius: 0;
+    table-layout: fixed;
+    overflow: visible;
+}
+
+.current-peers-table .peer-col-asn {
+    width: 11%;
+}
+
+.current-peers-table .peer-col-network {
+    width: 19%;
+}
+
+.current-peers-table .peer-col-organization {
+    width: 30%;
+}
+
+.current-peers-table .peer-col-country {
+    width: 17%;
+}
+
+.current-peers-table .peer-col-router {
+    width: 23%;
+}
+
+.peering-table.current-peers-table th,
+.peering-table.current-peers-table td {
+    vertical-align: top;
+    white-space: normal;
+}
+
+.peering-table.current-peers-table th:first-child,
+.peering-table.current-peers-table td:first-child {
+    position: sticky;
+    left: 0;
+    white-space: nowrap;
+}
+
+.current-peers-table th:first-child {
+    z-index: 2;
+}
+
+.current-peers-table td:first-child {
+    z-index: 1;
+    background: #f4f4f4;
+}
+
+.current-peers-table td:nth-child(2),
+.current-peers-table td:nth-child(3) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.current-peers-table td:nth-child(5) .router-badge {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 5px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.current-peers-table td:nth-child(5) .router-badge:last-child {
+    margin-bottom: 0;
+}
+
+.router-badge {
+    display: inline-block;
+    margin: 2px 5px 2px 0;
+    padding: 3px 7px;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.82em;
+    white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+    .network-map {
+        border-color: #444;
+        background: #0d1117;
+    }
+
+    .network-map-style,
+    .peer-count {
+        color: #ccc;
+    }
+
+    .network-map-style select {
+        border-color: #555;
+        background: #242424;
+        color: #f0f0f0;
+    }
+
+    .table-wrap.peer-table-wrap,
+    .current-peers-table td:first-child {
+        background: #2a2a2a;
+    }
+
+    .router-badge {
+        border-color: #555;
+        background: #242424;
+    }
+}
