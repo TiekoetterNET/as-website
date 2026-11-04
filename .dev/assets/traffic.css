@@ -78,15 +78,28 @@
 
         .traffic-chart {
             width: 100%;
-            min-width: 640px;
-            height: 280px;
+            /*
+             * Keep SVG labels at roughly 10.5px or larger. At the normal
+             * 900px page width this still fits inside the card; narrower
+             * viewports scroll instead of shrinking the labels further.
+             */
+            min-width: 800px;
+            height: auto;
             display: block;
+        }
+
+        #hourly-chart {
+            aspect-ratio: 900 / 320;
+        }
+
+        #daily-chart {
+            aspect-ratio: 900 / 300;
         }
 
         .chart-axis,
         .chart-label {
             fill: #666;
-            font-size: 11px;
+            font-size: 12px;
         }
 
         .chart-grid {
@@ -107,6 +120,7 @@
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             margin: 24px 0;
+            container-type: inline-size;
         }
 
         .dashboard-table {
@@ -116,12 +130,16 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
+            /* Scale down only to 12px; intrinsic table width then enables
+               the wrapper's scrollbar rather than making text unreadable. */
             font-size: 0.95em;
+            font-size: clamp(0.75rem, 1.8cqi, 0.95rem);
         }
 
         .dashboard-table th,
         .dashboard-table td {
-            padding: 10px 12px;
+            padding: 10px;
+            padding: 10px clamp(6px, 1cqi, 10px);
             text-align: left;
             border-bottom: 1px solid #ddd;
             white-space: nowrap;
@@ -148,10 +166,6 @@
         @media (max-width: 760px) {
             .kpi-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .traffic-chart {
-                min-width: 560px;
             }
         }
 
