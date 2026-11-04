@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">AS208694 — Tiekoetter.NET network banner</title>
+  <desc id="description">Banner for AS208694 with a connected-nodes network background that adapts to light and dark mode.</desc>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background-start: #f9fafb;
+      --background-middle: #f9fafb;
+      --background-end: #f9fafb;
+      --glow-blue: #005fc4;
+      --glow-blue-opacity: 0.08;
+      --glow-teal: #187a31;
+      --glow-teal-opacity: 0.06;
+      --connection-start: #005fc4;
+      --connection-end: #187a31;
+      --network-soft-opacity: 0.24;
+      --network-strong-opacity: 0.5;
+      --node: #005fc4;
+      --node-opacity: 0.58;
+      --headline-start: #333333;
+      --headline-end: #555555;
+      --primary-text: #333333;
+      --secondary-text: #555555;
+      --panel: #ffffff;
+      --panel-opacity: 1;
+      --panel-stroke: #dddddd;
+      --panel-stroke-opacity: 1;
+      --url-text: #005fc4;
+      --shadow: #000000;
+      --shadow-opacity: 0.12;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background-start: #121212;
+        --background-middle: #121212;
+        --background-end: #121212;
+        --glow-blue: #66aaff;
+        --glow-blue-opacity: 0.12;
+        --glow-teal: #36c48d;
+        --glow-teal-opacity: 0.08;
+        --connection-start: #66aaff;
+        --connection-end: #36c48d;
+        --network-soft-opacity: 0.2;
+        --network-strong-opacity: 0.42;
+        --node: #66aaff;
+        --node-opacity: 0.46;
+        --headline-start: #ffffff;
+        --headline-end: #cccccc;
+        --primary-text: #ffffff;
+        --secondary-text: #cccccc;
+        --panel: #1e1e1e;
+        --panel-opacity: 1;
+        --panel-stroke: #444444;
+        --panel-stroke-opacity: 1;
+        --url-text: #66aaff;
+        --shadow: #000000;
+        --shadow-opacity: 0.45;
+      }
+    }
+
+    .background-start { stop-color: var(--background-start); }
+    .background-middle { stop-color: var(--background-middle); }
+    .background-end { stop-color: var(--background-end); }
+    .glow-blue { stop-color: var(--glow-blue); stop-opacity: var(--glow-blue-opacity); }
+    .glow-teal { stop-color: var(--glow-teal); stop-opacity: var(--glow-teal-opacity); }
+    .connection-start { stop-color: var(--connection-start); }
+    .connection-end { stop-color: var(--connection-end); }
+    .headline-start { stop-color: var(--headline-start); }
+    .headline-end { stop-color: var(--headline-end); }
+    .asn {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-variant-numeric: slashed-zero tabular-nums;
+      font-feature-settings: "zero" 1, "tnum" 1;
+    }
+    .network-soft { opacity: var(--network-soft-opacity); }
+    .network-strong { opacity: var(--network-strong-opacity); }
+    .nodes { fill: var(--node); }
+    .nodes-soft { opacity: var(--node-opacity); }
+    .panel { fill: var(--panel); fill-opacity: var(--panel-opacity); stroke: var(--panel-stroke); stroke-opacity: var(--panel-stroke-opacity); }
+    .primary-text { fill: var(--primary-text); }
+    .secondary-text { fill: var(--secondary-text); }
+    .url-text { fill: var(--url-text); }
+  </style>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop class="background-start" offset="0" />
+      <stop class="background-middle" offset="0.5" />
+      <stop class="background-end" offset="1" />
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="0" cy="0.5" r="0.8">
+      <stop class="glow-blue" offset="0" />
+      <stop offset="1" stop-color="#1687c9" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowRight" cx="1" cy="0.2" r="0.75">
+      <stop class="glow-teal" offset="0" />
+      <stop offset="1" stop-color="#32c4b2" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="connection" x1="0" y1="0" x2="1" y2="1">
+      <stop class="connection-start" offset="0" />
+      <stop class="connection-end" offset="1" />
+    </linearGradient>
+    <linearGradient id="headline" x1="0" y1="0" x2="1" y2="0">
+      <stop class="headline-start" offset="0" />
+      <stop class="headline-end" offset="1" />
+    </linearGradient>
+    <filter id="nodeGlow" x="-200%" y="-200%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="var(--shadow)" flood-opacity="var(--shadow-opacity)" />
+    </filter>
+    <filter id="panelShadow" x="-10%" y="-15%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)" />
+  <rect width="1200" height="630" fill="url(#glowLeft)" />
+  <rect width="1200" height="630" fill="url(#glowRight)" />
+
+  <g fill="none" stroke="url(#connection)" stroke-linecap="round">
+    <g class="network-soft" stroke-width="1.5">
+      <path d="M-25 132 128 70 238 151 374 79 488 154" />
+      <path d="M128 70 171 251 34 324-30 445" />
+      <path d="M238 151 171 251 315 337 455 245 488 154" />
+      <path d="M34 324 171 251 315 337 244 519 83 575" />
+      <path d="M315 337 455 245 522 421 421 564 244 519" />
+      <path d="M725 73 850 143 1004 74 1228 159" />
+      <path d="M850 143 762 250 909 334 1043 244 1004 74" />
+      <path d="M1043 244 1176 321 1228 159" />
+      <path d="M762 250 690 405 834 525 909 334" />
+      <path d="M909 334 1043 244 1176 321 1095 511 1217 590" />
+      <path d="M834 525 963 584 1095 511" />
+      <path d="M488 154 600 85 725 73" />
+      <path d="M522 421 600 545 690 405" />
+    </g>
+    <g class="network-strong" stroke-width="2">
+      <path d="M34 324 171 251 315 337" />
+      <path d="M850 143 1004 74 1043 244" />
+      <path d="M909 334 1043 244 1176 321" />
+      <path d="M834 525 963 584 1095 511" />
+    </g>
+  </g>
+
+  <g class="nodes">
+    <g class="nodes-soft">
+      <circle cx="128" cy="70" r="4" />
+      <circle cx="238" cy="151" r="5" />
+      <circle cx="374" cy="79" r="3.5" />
+      <circle cx="488" cy="154" r="4" />
+      <circle cx="171" cy="251" r="5" />
+      <circle cx="34" cy="324" r="4" />
+      <circle cx="315" cy="337" r="5" />
+      <circle cx="455" cy="245" r="3.5" />
+      <circle cx="522" cy="421" r="4" />
+      <circle cx="421" cy="564" r="5" />
+      <circle cx="244" cy="519" r="4" />
+      <circle cx="83" cy="575" r="3.5" />
+      <circle cx="600" cy="85" r="4" />
+      <circle cx="600" cy="545" r="4" />
+      <circle cx="725" cy="73" r="4" />
+      <circle cx="850" cy="143" r="5" />
+      <circle cx="1004" cy="74" r="4" />
+      <circle cx="762" cy="250" r="4" />
+      <circle cx="909" cy="334" r="5" />
+      <circle cx="1043" cy="244" r="5" />
+      <circle cx="1176" cy="321" r="4" />
+      <circle cx="690" cy="405" r="3.5" />
+      <circle cx="834" cy="525" r="5" />
+      <circle cx="963" cy="584" r="4" />
+      <circle cx="1095" cy="511" r="5" />
+    </g>
+    <g filter="url(#nodeGlow)">
+      <circle cx="171" cy="251" r="3" />
+      <circle cx="315" cy="337" r="3" />
+      <circle cx="850" cy="143" r="3" />
+      <circle cx="1043" cy="244" r="3" />
+      <circle cx="1095" cy="511" r="3" />
+    </g>
+  </g>
+
+  <rect class="panel" x="175" y="96" width="850" height="414" rx="12" filter="url(#panelShadow)" />
+
+  <g text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" filter="url(#textShadow)">
+    <text class="asn" x="600" y="241" fill="url(#headline)" font-size="106" font-weight="700" letter-spacing="1">AS208694</text>
+    <text class="primary-text" x="600" y="323" font-size="44" font-weight="650" letter-spacing="1.2">LEON-AARON-TIEKOETTER</text>
+    <text class="secondary-text" x="600" y="384" font-size="27" font-weight="450" letter-spacing="0.8">Tiekoetter.NET Autonomous System</text>
+  </g>
+
+  <text class="url-text" x="600" y="461" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="21" font-weight="500" letter-spacing="1.2" text-anchor="middle">www.as.tiekoetter.net</text>
+</svg>
