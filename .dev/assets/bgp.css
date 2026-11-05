@@ -50,7 +50,7 @@
 
 .network-map {
     display: block;
-    width: min(100%, 82vh, 60rem);
+    width: min(100%, 96vh, 68rem);
     height: auto;
     margin: 20px auto 10px;
     border: 1px solid #ddd;
