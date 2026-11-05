@@ -51,8 +51,7 @@
 .network-map {
     display: block;
     width: 100%;
-    height: min(72vh, 52rem);
-    min-height: 28rem;
+    height: clamp(18rem, 50vh, 34rem);
     margin: 20px auto 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -165,8 +164,7 @@
 
 @media (max-width: 600px) {
     .network-map {
-        height: min(64vh, 38rem);
-        min-height: 22rem;
+        height: clamp(16rem, 44vh, 25rem);
         margin-top: 16px;
     }
 
