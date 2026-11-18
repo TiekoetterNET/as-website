@@ -1,7 +1,7 @@
 /* Page-specific styles for the AS208694 BGP network overview. */
 .container {
-    width: min(100%, 1200px);
-    max-width: 1200px;
+    width: min(100%, 1400px);
+    max-width: 1400px;
 }
 
 .nav {
@@ -50,8 +50,9 @@
 
 .network-map {
     display: block;
-    width: min(100%, 96vh, 68rem);
+    width: min(100%, 118vh, 85rem);
     height: auto;
+    min-height: 0;
     margin: 20px auto 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
