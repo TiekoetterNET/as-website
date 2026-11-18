@@ -51,9 +51,38 @@ function escapeHtml(value) {
 }
 
 async function fetchJson(url) {
-    const response = await fetch(url, { cache: "no-store" });
+    const response = await fetch(url, {
+        signal: AbortSignal.timeout(10000),
+        cache: "no-store"
+    });
     if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
     return response.json();
+}
+
+// Replace every "Loading..." placeholder when the dashboard data cannot be loaded,
+// so the page does not look like it is still loading forever.
+function renderLoadFailure() {
+    const unavailableRow = (id, cols) => {
+        const tbody = byId(id);
+        if (tbody) tbody.innerHTML = `<tr><td colspan="${cols}">Not available — data could not be loaded.</td></tr>`;
+    };
+
+    unavailableRow("sources-table", 4);
+    unavailableRow("interfaces-table", 8);
+    unavailableRow("monthly-table", 4);
+
+    for (const svgId of ["hourly-chart", "daily-chart"]) {
+        const svg = byId(svgId);
+        if (svg) svg.innerHTML = '<text x="20" y="40" class="chart-label">Chart data could not be loaded.</text>';
+    }
+
+    setText("primary-day-total", "—");
+    setText("today-total", "—");
+    setText("week-total", "—");
+    setText("primary-day-sub", "Data could not be loaded.");
+    setText("today-sub", "Data could not be loaded.");
+    setText("week-sub", "Data could not be loaded.");
+    setText("measurement-note", "Traffic data could not be loaded.");
 }
 
 function renderSummary(summary) {
@@ -342,6 +371,7 @@ async function loadDashboard() {
         const status = byId("load-status");
         status.textContent = `Failed to load traffic statistics: ${error.message}`;
         status.className = "info not-connected";
+        renderLoadFailure();
     }
 }
 

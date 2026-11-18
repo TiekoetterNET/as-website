@@ -132,6 +132,13 @@
     background: #f4f4f4;
 }
 
+/* Zebra striping for the long peer list. The row rule intentionally has
+   higher specificity than the sticky first-column background above so the
+   stripe also covers the sticky ASN cell. */
+.current-peers-table tbody tr:nth-child(even) td {
+    background: #ebebeb;
+}
+
 .current-peers-table td:nth-child(2),
 .current-peers-table td:nth-child(3) {
     overflow-wrap: anywhere;
@@ -195,6 +202,10 @@
     .table-wrap.peer-table-wrap,
     .current-peers-table td:first-child {
         background: #2a2a2a;
+    }
+
+    .current-peers-table tbody tr:nth-child(even) td {
+        background: #313131;
     }
 
     .router-badge {

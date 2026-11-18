@@ -182,6 +182,7 @@ async function loadTrafficTeaser() {
 
     try {
         const response = await fetch("https://data.luna.as.tiekoetter.net/assets/traffic/summary.json", {
+            signal: AbortSignal.timeout(5000),
             cache: "no-store"
         });
 
